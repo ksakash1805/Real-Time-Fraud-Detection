@@ -25,9 +25,12 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
 import matplotlib
+
+# Select a headless backend before importing pyplot. This is required by
+# environments such as Streamlit Community Cloud, which have no display server.
 matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 from src.config import LOGS_DIR
 
 st.set_page_config(

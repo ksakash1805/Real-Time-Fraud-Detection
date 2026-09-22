@@ -180,6 +180,10 @@ python scripts/simulate_stream.py --n 50 --url http://localhost:8000
 streamlit run scripts/run_dashboard.py
 ```
 
+### Streamlit Community Cloud
+Set the app's **Main file path** to `streamlit_app.py`. The FastAPI file
+`api/app.py` serves the prediction API and is not the Streamlit dashboard.
+
 ### 7. Run Tests
 ```bash
 pytest tests/ -v
