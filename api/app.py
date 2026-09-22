@@ -17,12 +17,21 @@ I/O bound and slow. We cache the model in memory so predictions are purely CPU-b
 
 import time
 import uuid
+import sys
+from pathlib import Path
 import joblib
 import pandas as pd
 from datetime import datetime
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+
+# Streamlit Cloud may launch this module with ``api/`` as the import context
+# (rather than the repository root). Ensure sibling packages such as ``src``
+# remain importable in either execution environment.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 # In a real project, src.config, src.monitoring might be available
 # We mock the imports here based on the instructions
