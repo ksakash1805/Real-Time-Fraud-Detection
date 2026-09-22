@@ -1,0 +1,50 @@
+# ============================================================
+# .gitignore — Credit Card Fraud Detection System
+# ============================================================
+
+# --- Data (too large for Git; use Git LFS or download separately) ---
+data/
+*.csv
+
+# --- Trained model artifacts ---
+models/*.joblib
+models/*.pkl
+
+# --- MLflow tracking ---
+mlruns/
+mlartifacts/
+
+# --- Generated plots ---
+plots/
+
+# --- Python bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Environment variables ---
+.env
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Distribution / Packaging ---
+dist/
+build/
+*.egg-info/
